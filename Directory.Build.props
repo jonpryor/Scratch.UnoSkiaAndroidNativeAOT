@@ -2,7 +2,13 @@
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+
+    <!--
+      Disable for now; for unknown reasons, the newer versions in
+      `Directory.Packages.props` are NOT used, and we need the newer versions.
+      Using `@(PackageReference)` in the .csproj works as intended.
+      -->
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
 
     <!--
       Adding NoWarn to remove build warnings

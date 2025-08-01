@@ -1,6 +1,6 @@
 <Project Sdk="Uno.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net9.0-android</TargetFrameworks>
+    <TargetFrameworks>net9.0-android;net10.0-android</TargetFrameworks>
 
     <OutputType>Exe</OutputType>
     <UnoSingleProject>true</UnoSingleProject>
@@ -27,5 +27,22 @@
       SkiaRenderer;
     </UnoFeatures>
   </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v10.0' And '$(Configuration)' == 'Release' ">
+    <PublishAOT>true</PublishAOT>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.AndroidX.Activity" Version="1.10.1.2" />
+    <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.16" />
+    <PackageReference Include="Xamarin.AndroidX.CustomView" Version="1.2.0" />
+    <PackageReference Include="Xamarin.AndroidX.DrawerLayout" Version="1.2.0.17" />
+    <PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.8.8" />
+    <PackageReference Include="Xamarin.AndroidX.Lifecycle.Common.Jvm" Version="2.9.2" />
+    <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData.Core" Version="2.9.2" />
+    <PackageReference Include="Xamarin.AndroidX.Lifecycle.ViewModel.Android" Version="2.9.2" />
+    <PackageReference Include="Xamarin.AndroidX.Loader" Version="1.1.0.33" />
+    <PackageReference Include="Xamarin.AndroidX.SavedState" Version="1.3.1" />
+  </ItemGroup>
 
 </Project>
