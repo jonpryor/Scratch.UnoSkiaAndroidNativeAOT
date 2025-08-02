@@ -24,19 +24,20 @@ I ActivityManager: Displayed Scratch.UnoSkiaAndroidNativeAOT/crc64780f121fa62707
 
 ```sh
 % export PATH=$HOME/Downloads/dotnet-sdk-10.0.100-preview.6.25358.103-osx-x64:$PATH
-% time dotnet build -c Release -f net10.0-android */*.csproj -t:Install,StartAndroidActivity -r android-x64 -bl ; echo exit=$?; notify complete
+% time dotnet build -c Release -f net10.0-android */*.csproj -p:PublishAOT=true -t:Install,StartAndroidActivity -r android-x64 -bl ; echo exit=$?; notify complete
 …
-dotnet build -c Release -f net10.0-android */*.csproj  -r android-x64 -bl  352.53s user 84.20s system 298% cpu 2:26.49 total
+Build succeeded with 826 warning(s) in 181.3s
+dotnet build -c Release -f net10.0-android */*.csproj -p:PublishAOT=true  -r   486.08s user 52.41s system 291% cpu 3:04.56 total
 ```
 
-Resulting `.apk` is 30MB in size.
+Resulting `.apk` is 40MB in size.
 
 Launch times:
 
 ```
-I ActivityManager: Displayed Scratch.UnoSkiaAndroidNativeAOT/crc64780f121fa62707e1.MainActivity: +5s234ms
-I ActivityManager: Displayed Scratch.UnoSkiaAndroidNativeAOT/crc64780f121fa62707e1.MainActivity: +5s488ms
-I ActivityManager: Displayed Scratch.UnoSkiaAndroidNativeAOT/crc64780f121fa62707e1.MainActivity: +5s455ms
+I ActivityManager: Displayed Scratch.UnoSkiaAndroidNativeAOT/crc64780f121fa62707e1.MainActivity: +899ms
+I ActivityManager: Displayed Scratch.UnoSkiaAndroidNativeAOT/crc64780f121fa62707e1.MainActivity: +938ms
+I ActivityManager: Displayed Scratch.UnoSkiaAndroidNativeAOT/crc64780f121fa62707e1.MainActivity: +780ms
 ```
 
 ## Discussion
